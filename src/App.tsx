@@ -5,7 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRight, Github, Linkedin, Mail, MapPin, ExternalLink, Code2, Terminal, Database, Globe, Smartphone, Sparkles } from "lucide-react";
+import { ArrowUpRight, Github, Linkedin, Mail, MapPin, ExternalLink, Globe, Smartphone, Database, Code2, Terminal, Sparkles } from "lucide-react";
 
 const queryClient = new QueryClient();
 
@@ -235,7 +235,6 @@ function Home() {
             <a href="#projects" className="hover:text-foreground transition-colors">{t.nav.work}</a>
           </div>
           <LangSwitcher />
-          {/* Primary nav CTA */}
           <a
             href="#contact"
             className="inline-flex items-center gap-1.5 h-9 px-4 text-sm font-semibold rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all hover:scale-105 shadow-lg shadow-primary/25"
@@ -256,7 +255,6 @@ function Home() {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="space-y-8 max-w-4xl"
           >
-            {/* Available badge */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -268,7 +266,6 @@ function Home() {
               </span>
             </motion.div>
 
-            {/* Name + photo */}
             <div className="flex items-center gap-6">
               <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 border-primary/40 p-1 flex-shrink-0">
                 <div className="w-full h-full rounded-full overflow-hidden bg-muted">
@@ -299,23 +296,19 @@ function Home() {
               {t.hero.taglineSuffix}
             </h2>
 
-            {/* CTA group — two prominent buttons + social icons */}
             <div className="flex flex-wrap items-center gap-3 pt-2">
-              {/* Primary CTA */}
               <a
                 href="#projects"
                 className="inline-flex items-center justify-center h-13 px-8 py-3.5 text-base font-semibold rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all hover:scale-105 gap-2 shadow-xl shadow-primary/30"
               >
                 {t.hero.cta} <ArrowUpRight className="w-4 h-4" />
               </a>
-              {/* Secondary CTA — outlined, same weight */}
               <a
                 href={`mailto:${EMAIL}`}
                 className="inline-flex items-center justify-center h-13 px-8 py-3.5 text-base font-semibold rounded-full border-2 border-foreground/20 text-foreground hover:border-primary hover:text-primary transition-all hover:scale-105 gap-2"
               >
                 <Mail className="w-4 h-4" /> {t.hero.ctaSecondary}
               </a>
-              {/* Social icons */}
               <div className="flex gap-1 ms-2">
                 <a href={GITHUB} target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-foreground transition-colors p-2.5 rounded-full hover:bg-muted">
                   <Github className="w-5 h-5" />
@@ -368,6 +361,7 @@ function Home() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="group relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
               >
+                {/* Left Text Detail Meta */}
                 <div className="lg:col-span-5 space-y-6 z-10">
                   <div className="space-y-2">
                     <span className="text-primary font-mono text-sm">{project.year}</span>
@@ -397,19 +391,31 @@ function Home() {
                   </div>
                 </div>
 
-                <div className="lg:col-span-7 relative h-[300px] sm:h-[380px] rounded-xl overflow-hidden bg-muted/30 border border-border/50 p-6 flex flex-col justify-between">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="flex-1 flex items-center justify-center opacity-20 group-hover:opacity-40 transition-opacity duration-700">
-                    {index === 0 && <Globe className="w-32 h-32 text-primary" />}
-                    {index === 1 && <Smartphone className="w-32 h-32 text-primary" />}
-                    {index === 2 && <Database className="w-32 h-32 text-primary" />}
+                {/* Right Interactive Iframe Preview Panel Container */}
+                <div className="lg:col-span-7 relative h-[300px] sm:h-[380px] rounded-xl overflow-hidden bg-muted/30 border border-border/50 flex flex-col justify-between group/preview">
+                  
+                  {/* Embedded Iframe Wrapper Window */}
+                  <div className="absolute inset-0 w-full h-full overflow-hidden">
+                    <iframe
+                      src={project.url}
+                      title={project.titles[lang]}
+                      loading="lazy"
+                      scrolling="no"
+                      className="w-[133%] h-[133%] border-0 pointer-events-none group-hover/preview:pointer-events-auto origin-top-left scale-[0.75] transition-all duration-500 brightness-[0.85] group-hover:brightness-100"
+                      style={{ clipPath: 'inset(0 0 0 0)' }}
+                    />
+                    {/* Shadow Blend Layer */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-background/20 via-transparent to-background/40 pointer-events-none group-hover:opacity-0 transition-opacity duration-500" />
                   </div>
-                  <div className="mt-auto w-full flex justify-end">
-                    <div className="bg-background/80 backdrop-blur-md border border-border text-sm font-mono px-4 py-2 rounded-lg flex items-center gap-2 text-muted-foreground shadow-2xl">
+
+                  {/* Operational Infrastructure Badge */}
+                  <div className="mt-auto w-full flex justify-end p-6 relative z-20 pointer-events-none">
+                    <div className="bg-background/90 backdrop-blur-md border border-border text-sm font-mono px-4 py-2 rounded-lg flex items-center gap-2 text-muted-foreground shadow-2xl">
                       <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                       {t.projects.live}
                     </div>
                   </div>
+                  
                 </div>
               </motion.div>
             ))}
@@ -451,7 +457,7 @@ function Home() {
           </motion.div>
         </section>
 
-        {/* Contact Section — high-contrast, can't-miss CTA */}
+        {/* Contact Section */}
         <section id="contact" className="py-24 border-t border-border/50">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -460,9 +466,7 @@ function Home() {
             transition={{ duration: 0.6 }}
             className="relative rounded-3xl overflow-hidden bg-foreground text-background px-8 sm:px-16 py-16 sm:py-20 text-center"
           >
-            {/* subtle background glow */}
             <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-transparent pointer-events-none" />
-
             <div className="relative z-10 max-w-2xl mx-auto space-y-6">
               <span className="inline-flex items-center gap-2 text-sm font-medium px-4 py-1.5 rounded-full bg-background/15 text-background/80 mb-2">
                 <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
@@ -474,8 +478,6 @@ function Home() {
               <p className="text-lg text-background/70 max-w-lg mx-auto">
                 {t.contact.sub}
               </p>
-
-              {/* Main CTA button — inverted colours, max contrast */}
               <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a
                   href={`mailto:${EMAIL}`}
@@ -493,8 +495,6 @@ function Home() {
                   </a>
                 </div>
               </div>
-
-              {/* Direct email display */}
               <p className="text-background/50 text-sm pt-2">
                 {EMAIL}
               </p>
@@ -521,7 +521,6 @@ function Router() {
 
 function App() {
   const [lang, setLang] = useState<Lang>("fr");
-
   return (
     <LangContext.Provider value={{ lang, setLang }}>
       <QueryClientProvider client={queryClient}>
