@@ -132,7 +132,7 @@ const projects = [
   {
     url: "https://locationvans-algeria.vercel.app/",
     tags: ["Next.js", "Tailwind CSS", "PostgreSQL"],
-    year: "2024",
+    year: "2026",
     titles: { fr: "Location Vans Algérie", ar: "تأجير الشاحنات في الجزائر", en: "Location Vans Algeria" },
     descs: {
       fr: "Plateforme complète de location de vans simplifiant les réservations et la gestion de flotte pour la logistique locale.",
@@ -141,9 +141,20 @@ const projects = [
     },
   },
   {
+    url: "https://darkom-immobilier.vercel.app/",
+    tags: ["Next.js", "Tailwind CSS", "PostgreSQL"],
+    year: "2026",
+    titles: { fr: "Location Immobilier Algérie", ar: "تأجير العقارات في الجزائر", en: "Real Estate Rent Algeria" },
+    descs: {
+      fr: "Plateforme complète de location de l'immobilier simplifiant les réservations.",
+      ar: "منصة متكاملة لتأجير العقارات تُبسّط عمليات الحجز  .",
+      en: "A comprehensive real estate rental and location service platform streamlining bookings.",
+    },
+  },
+  {
     url: "https://villa-tezribt.vercel.app/",
     tags: ["React", "Framer Motion", "Supabase"],
-    year: "2023",
+    year: "2026",
     titles: { fr: "Villa Tezribt", ar: "فيلا تزريبت", en: "Villa Tezribt" },
     descs: {
       fr: "Vitrine premium pour la location de villa de luxe, avec galeries immersives et processus de réservation direct.",
@@ -154,8 +165,8 @@ const projects = [
   {
     url: "https://enteg.vercel.app/",
     tags: ["TypeScript", "Node.js", "Redis"],
-    year: "2023",
-    titles: { fr: "Enteg", ar: "إنتاج", en: "Enteg" },
+    year: "2026",
+    titles: { fr: "Enteg", ar: "ُEnteg Voyage", en: "Enteg" },
     descs: {
       fr: "Application web spécialisée conçue pour résoudre des goulots d'étranglement opérationnels avec une interface très soignée.",
       ar: "تطبيق ويب متخصص مصمم لحل العقبات التشغيلية مع واجهة مستخدم عالية الجودة.",
