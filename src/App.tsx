@@ -163,10 +163,10 @@ const projects = [
     },
   },
   {
-    url: "https://enteg.vercel.app/",
+    url: "https://enteg-voyage.vercel.app/",
     tags: ["TypeScript", "Node.js", "Redis"],
     year: "2026",
-    titles: { fr: "Enteg", ar: "ُEnteg Voyage", en: "Enteg" },
+    titles: { fr: "Enteg Voyage", ar: "ُEnteg Voyage", en: "Enteg Voyage" },
     descs: {
       fr: "Application web spécialisée conçue pour résoudre des goulots d'étranglement opérationnels avec une interface très soignée.",
       ar: "تطبيق ويب متخصص مصمم لحل العقبات التشغيلية مع واجهة مستخدم عالية الجودة.",
