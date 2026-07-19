@@ -190,7 +190,7 @@ const flags: Record<Lang, { emoji: string; label: string }> = {
 const GITHUB = "https://github.com/yac2005";
 const LINKEDIN = "https://www.linkedin.com/in/yacine-abanou-15315a241/";
 const EMAIL = "yacineabanou88@gmail.com";
-const NAME = "Yacine Abanou";
+const NAME = "YADEV.DZ";
 
 const LangContext = createContext<{ lang: Lang; setLang: (l: Lang) => void }>({
   lang: "fr",
