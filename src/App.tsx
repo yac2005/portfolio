@@ -129,7 +129,7 @@ const translations = {
 };
 
 const projects = [
-  {
+  
   {
     url: "https://enteg-voyage.vercel.app/",
     tags: ["TypeScript", "Node.js", "Redis"],
@@ -141,9 +141,7 @@ const projects = [
       en: "A specialized web application engineered to solve specific operational bottlenecks with a highly polished user interface.",
     },
   },
-
-
-    
+    {
     url: "https://locationvans-algeria.vercel.app/",
     tags: ["Next.js", "Tailwind CSS", "PostgreSQL"],
     year: "2026",
