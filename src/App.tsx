@@ -130,6 +130,20 @@ const translations = {
 
 const projects = [
   {
+  {
+    url: "https://enteg-voyage.vercel.app/",
+    tags: ["TypeScript", "Node.js", "Redis"],
+    year: "2026",
+    titles: { fr: "Enteg Voyage", ar: "ُEnteg Voyage", en: "Enteg Voyage" },
+    descs: {
+      fr: "Application web spécialisée conçue pour résoudre des goulots d'étranglement opérationnels avec une interface très soignée.",
+      ar: "تطبيق ويب متخصص مصمم لحل العقبات التشغيلية مع واجهة مستخدم عالية الجودة.",
+      en: "A specialized web application engineered to solve specific operational bottlenecks with a highly polished user interface.",
+    },
+  },
+
+
+    
     url: "https://locationvans-algeria.vercel.app/",
     tags: ["Next.js", "Tailwind CSS", "PostgreSQL"],
     year: "2026",
@@ -151,28 +165,7 @@ const projects = [
       en: "A comprehensive real estate rental and location service platform streamlining bookings.",
     },
   },
-  {
-    url: "https://villa-tezribt.vercel.app/",
-    tags: ["React", "Framer Motion", "Supabase"],
-    year: "2026",
-    titles: { fr: "Villa Tezribt", ar: "فيلا تزريبت", en: "Villa Tezribt" },
-    descs: {
-      fr: "Vitrine premium pour la location de villa de luxe, avec galeries immersives et processus de réservation direct.",
-      ar: "واجهة فاخرة لعرض فيلا راقية للإيجار، مع معارض صور غامرة وعملية حجز مباشرة.",
-      en: "A premium property showcase for luxury villa rentals, featuring immersive galleries and direct booking workflows.",
-    },
-  },
-  {
-    url: "https://enteg-voyage.vercel.app/",
-    tags: ["TypeScript", "Node.js", "Redis"],
-    year: "2026",
-    titles: { fr: "Enteg Voyage", ar: "ُEnteg Voyage", en: "Enteg Voyage" },
-    descs: {
-      fr: "Application web spécialisée conçue pour résoudre des goulots d'étranglement opérationnels avec une interface très soignée.",
-      ar: "تطبيق ويب متخصص مصمم لحل العقبات التشغيلية مع واجهة مستخدم عالية الجودة.",
-      en: "A specialized web application engineered to solve specific operational bottlenecks with a highly polished user interface.",
-    },
-  },
+
 ];
 
 const skillGroups = [
