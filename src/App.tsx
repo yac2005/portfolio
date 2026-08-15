@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, Github, Linkedin, Mail, MapPin, ExternalLink, Globe, Smartphone, Database, Code2, Terminal, Sparkles } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +37,7 @@ const translations = {
       title: "Projets phares",
       viewLive: "Voir le site",
       live: "En production",
+      dev: "En développement",
     },
     skills: {
       label: "Compétences",
@@ -74,6 +76,7 @@ const translations = {
       title: "المشاريع البارزة",
       viewLive: "زيارة الموقع",
       live: "قيد التشغيل",
+      dev: "قيد التطوير",
     },
     skills: {
       label: "الإمكانيات",
@@ -112,6 +115,7 @@ const translations = {
       title: "Featured Projects",
       viewLive: "View Live Site",
       live: "Production Live",
+      dev: "In Development",
     },
     skills: {
       label: "Capabilities",
@@ -129,27 +133,26 @@ const translations = {
 };
 
 const projects = [
-  
   {
-    url: "https://enteg-voyage.vercel.app/",
-    tags: ["TypeScript", "Node.js", "Redis"],
+    url: "https://boutique-hijab-api-server.vercel.app/",
+    tags: ["React", "TypeScript", "Tailwind CSS"],
     year: "2026",
-    titles: { fr: "Enteg Voyage", ar: "ُEnteg Voyage", en: "Enteg Voyage" },
+    titles: { fr: "Boutique Hijab", ar: "بوتيك حجاب", en: "Boutique Hijab" },
     descs: {
-      fr: "Application web spécialisée conçue pour résoudre des goulots d'étranglement opérationnels avec une interface très soignée.",
-      ar: "تطبيق ويب متخصص مصمم لحل العقبات التشغيلية مع واجهة مستخدم عالية الجودة.",
-      en: "A specialized web application engineered to solve specific operational bottlenecks with a highly polished user interface.",
+      fr: "Boutique en ligne mobile-first pour la vente de voiles et accessoires modest wear, avec commande via WhatsApp.",
+      ar: "متجر إلكتروني متوافق مع الجوال لبيع الحجاب وإكسسوارات اللباس المحتشم، مع الطلب عبر واتساب.",
+      en: "A mobile-first e-commerce landing page for hijabs and modest-wear accessories, with ordering via WhatsApp.",
     },
   },
-    {
-    url: "https://locationvans-algeria.vercel.app/",
-    tags: ["Next.js", "Tailwind CSS", "PostgreSQL"],
+  {
+    url: "https://el-bahdja-restaurant.vercel.app/",
+    tags: ["React", "Tailwind CSS", "Framer Motion"],
     year: "2026",
-    titles: { fr: "Location Vans Algérie", ar: "تأجير الشاحنات في الجزائر", en: "Location Vans Algeria" },
+    titles: { fr: "Restaurant El Bahdja", ar: "مطعم البهجة", en: "El Bahdja Restaurant" },
     descs: {
-      fr: "Plateforme complète de location de vans simplifiant les réservations et la gestion de flotte pour la logistique locale.",
-      ar: "منصة متكاملة لتأجير الشاحنات تُبسّط عمليات الحجز وإدارة الأسطول في الجزائر.",
-      en: "A comprehensive van rental and location service platform streamlining bookings and fleet management for local logistics.",
+      fr: "Site de commande en ligne pour un restaurant algérien moderne, avec menu, livraison et paiement à la livraison.",
+      ar: "موقع طلب عبر الإنترنت لمطعم جزائري عصري، مع قائمة طعام وتوصيل ودفع عند الاستلام.",
+      en: "An online ordering site for a modern Algerian restaurant, with menu, delivery, and cash-on-delivery.",
     },
   },
   {
@@ -163,7 +166,62 @@ const projects = [
       en: "A comprehensive real estate rental and location service platform streamlining bookings.",
     },
   },
-
+  {
+    url: "https://enteg-voyage.vercel.app/",
+    tags: ["TypeScript", "Node.js", "Redis"],
+    year: "2026",
+    titles: { fr: "Enteg Voyage", ar: "ُEnteg Voyage", en: "Enteg Voyage" },
+    descs: {
+      fr: "Application web spécialisée conçue pour résoudre des goulots d'étranglement opérationnels avec une interface très soignée.",
+      ar: "تطبيق ويب متخصص مصمم لحل العقبات التشغيلية مع واجهة مستخدم عالية الجودة.",
+      en: "A specialized web application engineered to solve specific operational bottlenecks with a highly polished user interface.",
+    },
+  },
+  {
+    url: "https://bijoux-fantaisie.vercel.app/",
+    tags: ["React", "TypeScript", "Tailwind CSS"],
+    year: "2026",
+    titles: { fr: "Bijoux Fantaisie", ar: "مجوهرات فنتازي", en: "Bijoux Fantaisie" },
+    descs: {
+      fr: "Landing page élégante pour une boutique de bijoux fantaisie, mettant en valeur le catalogue et la marque.",
+      ar: "صفحة هبوط أنيقة لمتجر مجوهرات، تُبرز الكتالوج والعلامة التجارية.",
+      en: "An elegant landing page for a costume jewelry store, showcasing the catalog and the brand.",
+    },
+  },
+  {
+    url: "https://tezribt.vercel.app/",
+    tags: ["Next.js", "Tailwind CSS"],
+    year: "2026",
+    titles: { fr: "Tezribt", ar: "تزريبث", en: "Tezribt" },
+    descs: {
+      fr: "Application web moderne offrant une expérience utilisateur fluide et soignée.",
+      ar: "تطبيق ويب حديث يوفّر تجربة مستخدم سلسة وعالية الجودة.",
+      en: "A modern web application delivering a smooth and polished user experience.",
+    },
+  },
+  {
+    url: "https://microcenter-clone.vercel.app/",
+    tags: ["React", "Tailwind CSS", "Vite"],
+    year: "2026",
+    dev: true,
+    titles: { fr: "MicroCenter Clone", ar: "MicroCenter Clone", en: "MicroCenter Clone" },
+    descs: {
+      fr: "Storefront d'électronique à grande échelle avec catalogue de produits, catégories et panier.",
+      ar: "متجر إلكترونيات واسع النطاق مع كتالوج منتجات وفئات وسلة تسوق.",
+      en: "A large-scale electronics storefront with a product catalog, categories, and shopping cart.",
+    },
+  },
+  {
+    url: "https://locationvans-algeria.vercel.app/",
+    tags: ["Next.js", "Tailwind CSS", "PostgreSQL"],
+    year: "2026",
+    titles: { fr: "Location Vans Algérie", ar: "تأجير الشاحنات في الجزائر", en: "Location Vans Algeria" },
+    descs: {
+      fr: "Plateforme complète de location de vans simplifiant les réservations et la gestion de flotte pour la logistique locale.",
+      ar: "منصة متكاملة لتأجير الشاحنات تُبسّط عمليات الحجز وإدارة الأسطول في الجزائر.",
+      en: "A comprehensive van rental and location service platform streamlining bookings and fleet management for local logistics.",
+    },
+  },
 ];
 
 const skillGroups = [
@@ -311,6 +369,14 @@ function Home() {
               >
                 <Mail className="w-4 h-4" /> {t.hero.ctaSecondary}
               </a>
+              <a
+                href="https://wa.me/213540263850"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center h-13 px-8 py-3.5 text-base font-semibold rounded-full bg-[#25D366] text-white hover:bg-[#1ebe5b] transition-all hover:scale-105 gap-2 shadow-xl shadow-[#25D366]/30"
+              >
+                <FaWhatsapp className="w-4 h-4" /> WhatsApp
+              </a>
               <div className="flex gap-1 ms-2">
                 <a href={GITHUB} target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-foreground transition-colors p-2.5 rounded-full hover:bg-muted">
                   <Github className="w-5 h-5" />
@@ -323,7 +389,77 @@ function Home() {
           </motion.div>
         </section>
 
-        {/* About Section */}
+        {/* Projects Section */}
+        <section id="projects" className="py-24 border-t border-border/50">
+          <div className="mb-16">
+            <h3 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-2">{t.projects.label}</h3>
+            <h2 className="text-3xl sm:text-4xl font-bold">{t.projects.title}</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project, index) => (
+              <motion.div
+                key={project.url}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="group relative flex flex-col overflow-hidden rounded-xl border border-border/50 bg-muted/30 transition-colors duration-500 hover:border-primary/40"
+              >
+                <div className="relative h-44 sm:h-52 flex-shrink-0 overflow-hidden group/preview">
+                  <div className="absolute inset-0 w-full h-full overflow-hidden">
+                    <iframe
+                      src={project.url}
+                      title={project.titles[lang]}
+                      loading="lazy"
+                      scrolling="no"
+                      className="w-[200%] h-[200%] border-0 pointer-events-none group-hover/preview:pointer-events-auto origin-top-left scale-[0.5] transition-all duration-500 brightness-[0.85] group-hover:brightness-100"
+                      style={{ clipPath: 'inset(0 0 0 0)' }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-br from-background/20 via-transparent to-background/40 pointer-events-none group-hover:opacity-0 transition-opacity duration-500" />
+                  </div>
+                  <div className="absolute bottom-3 right-3 z-20 pointer-events-none">
+                    <div className="bg-background/90 backdrop-blur-md border border-border text-xs font-mono px-3 py-1.5 rounded-lg flex items-center gap-2 text-muted-foreground shadow-2xl">
+                      <span className={`w-2 h-2 rounded-full ${project.dev ? "bg-amber-400 animate-pulse" : "bg-green-500 animate-pulse"}`} />
+                      {project.dev ? t.projects.dev : t.projects.live}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex flex-col flex-grow gap-4 p-6">
+                  <div className="space-y-2">
+                    <span className="text-primary font-mono text-sm">{project.year}</span>
+                    <h3 className="text-xl font-bold group-hover:text-primary transition-colors">
+                      {project.titles[lang]}
+                    </h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed flex-grow">
+                    {project.descs[lang]}
+                  </p>
+                  <ul className="flex flex-wrap gap-2">
+                    {project.tags.map(tag => (
+                      <li key={tag} className="text-xs font-mono px-2.5 py-1 bg-secondary text-secondary-foreground rounded-full">
+                        {tag}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="pt-1">
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 h-10 px-5 font-semibold text-sm rounded-full bg-secondary text-foreground hover:bg-primary hover:text-primary-foreground transition-all hover:scale-105"
+                    >
+                      {t.projects.viewLive} <ExternalLink className="w-4 h-4" />
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+
+        {/* About Section - commented out
         <section id="about" className="py-24 border-t border-border/50">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -345,84 +481,7 @@ function Home() {
             </div>
           </motion.div>
         </section>
-
-        {/* Projects Section */}
-        <section id="projects" className="py-24 border-t border-border/50">
-          <div className="mb-16">
-            <h3 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-2">{t.projects.label}</h3>
-            <h2 className="text-3xl sm:text-4xl font-bold">{t.projects.title}</h2>
-          </div>
-
-          <div className="space-y-16">
-            {projects.map((project, index) => (
-              <motion.div
-                key={project.url}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
-              >
-                {/* Left Text Detail Meta */}
-                <div className="lg:col-span-5 space-y-6 z-10">
-                  <div className="space-y-2">
-                    <span className="text-primary font-mono text-sm">{project.year}</span>
-                    <h3 className="text-3xl font-bold group-hover:text-primary transition-colors">
-                      {project.titles[lang]}
-                    </h3>
-                  </div>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    {project.descs[lang]}
-                  </p>
-                  <ul className="flex flex-wrap gap-3">
-                    {project.tags.map(tag => (
-                      <li key={tag} className="text-sm font-mono px-3 py-1 bg-secondary text-secondary-foreground rounded-full">
-                        {tag}
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="pt-2">
-                    <a
-                      href={project.url}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-2 h-11 px-6 font-semibold text-sm rounded-full bg-secondary text-foreground hover:bg-primary hover:text-primary-foreground transition-all hover:scale-105"
-                    >
-                      {t.projects.viewLive} <ExternalLink className="w-4 h-4" />
-                    </a>
-                  </div>
-                </div>
-
-                {/* Right Interactive Iframe Preview Panel Container */}
-                <div className="lg:col-span-7 relative h-[300px] sm:h-[380px] rounded-xl overflow-hidden bg-muted/30 border border-border/50 flex flex-col justify-between group/preview">
-                  
-                  {/* Embedded Iframe Wrapper Window */}
-                  <div className="absolute inset-0 w-full h-full overflow-hidden">
-                    <iframe
-                      src={project.url}
-                      title={project.titles[lang]}
-                      loading="lazy"
-                      scrolling="no"
-                      className="w-[133%] h-[133%] border-0 pointer-events-none group-hover/preview:pointer-events-auto origin-top-left scale-[0.75] transition-all duration-500 brightness-[0.85] group-hover:brightness-100"
-                      style={{ clipPath: 'inset(0 0 0 0)' }}
-                    />
-                    {/* Shadow Blend Layer */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-background/20 via-transparent to-background/40 pointer-events-none group-hover:opacity-0 transition-opacity duration-500" />
-                  </div>
-
-                  {/* Operational Infrastructure Badge */}
-                  <div className="mt-auto w-full flex justify-end p-6 relative z-20 pointer-events-none">
-                    <div className="bg-background/90 backdrop-blur-md border border-border text-sm font-mono px-4 py-2 rounded-lg flex items-center gap-2 text-muted-foreground shadow-2xl">
-                      <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                      {t.projects.live}
-                    </div>
-                  </div>
-                  
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </section>
+        */}
 
         {/* Skills Section */}
         <section className="py-24 border-t border-border/50">
@@ -486,6 +545,14 @@ function Home() {
                   className="inline-flex items-center justify-center h-14 px-10 text-lg font-bold rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all hover:scale-105 gap-3 shadow-2xl shadow-primary/40"
                 >
                   <Mail className="w-5 h-5" /> {t.contact.cta}
+                </a>
+                <a
+                  href="https://wa.me/213540263850"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center h-14 px-10 text-lg font-bold rounded-full bg-[#25D366] text-white hover:bg-[#1ebe5b] transition-all hover:scale-105 gap-3 shadow-2xl shadow-[#25D366]/40"
+                >
+                  <FaWhatsapp className="w-5 h-5" /> WhatsApp
                 </a>
                 <div className="flex items-center gap-3 text-background/60 text-sm">
                   <a href={LINKEDIN} target="_blank" rel="noreferrer" className="hover:text-background transition-colors flex items-center gap-1.5 font-medium">
