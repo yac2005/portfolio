@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
+import Privacy from "@/pages/privacy";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, Github, Linkedin, Mail, MapPin, ExternalLink, Globe, Smartphone, Database, Code2, Terminal, Sparkles } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
@@ -16,6 +17,7 @@ const translations = {
   fr: {
     dir: "ltr",
     nav: { about: "À propos", work: "Projets", contact: "Contact", hire: "Travaillons ensemble" },
+    whatsapp: "Bonjour YADEV.DZ, je souhaite commander vos services. Pouvez-vous me contacter pour discuter des détails ?",
     hero: {
       location: "Algérie",
       available: "Disponible pour de nouveaux projets",
@@ -55,6 +57,7 @@ const translations = {
   ar: {
     dir: "rtl",
     nav: { about: "عني", work: "المشاريع", contact: "التواصل", hire: "لنعمل معاً" },
+    whatsapp: "مرحباً YADEV.DZ، أرغب في طلب خدماتكم. هل يمكنكم التواصل معي لمناقشة التفاصيل؟",
     hero: {
       location: "الجزائر",
       available: "متاح لمشاريع جديدة",
@@ -94,6 +97,7 @@ const translations = {
   en: {
     dir: "ltr",
     nav: { about: "About", work: "Work", contact: "Contact", hire: "Hire Me" },
+    whatsapp: "Hello YADEV.DZ, I would like to order your services. Could you contact me to discuss the details?",
     hero: {
       location: "Algeria",
       available: "Available for new projects",
@@ -240,6 +244,8 @@ const GITHUB = "https://github.com/yac2005";
 const LINKEDIN = "https://www.linkedin.com/in/yacine-abanou-15315a241/";
 const EMAIL = "yacineabanou88@gmail.com";
 const NAME = "YADEV.DZ";
+const WHATSAPP_URL = (lang: Lang) =>
+  `https://wa.me/213540263850?text=${encodeURIComponent(translations[lang].whatsapp)}`;
 
 const LangContext = createContext<{ lang: Lang; setLang: (l: Lang) => void }>({
   lang: "fr",
@@ -370,7 +376,7 @@ function Home() {
                 <Mail className="w-4 h-4" /> {t.hero.ctaSecondary}
               </a>
               <a
-                href="https://wa.me/213540263850"
+                href={WHATSAPP_URL(lang)}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center justify-center h-13 px-8 py-3.5 text-base font-semibold rounded-full bg-[#25D366] text-white hover:bg-[#1ebe5b] transition-all hover:scale-105 gap-2 shadow-xl shadow-[#25D366]/30"
@@ -547,7 +553,7 @@ function Home() {
                   <Mail className="w-5 h-5" /> {t.contact.cta}
                 </a>
                 <a
-                  href="https://wa.me/213540263850"
+                  href={WHATSAPP_URL(lang)}
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center justify-center h-14 px-10 text-lg font-bold rounded-full bg-[#25D366] text-white hover:bg-[#1ebe5b] transition-all hover:scale-105 gap-3 shadow-2xl shadow-[#25D366]/40"
@@ -572,17 +578,24 @@ function Home() {
         </section>
       </main>
 
-      <footer className="py-8 text-center text-sm text-muted-foreground border-t border-border/50">
+      <footer className="py-8 text-center text-sm text-muted-foreground border-t border-border/50 space-y-2">
         <p>© {new Date().getFullYear()} {NAME}. {t.footer}</p>
+        <a href="/privacy" className="underline hover:text-foreground">Privacy Policy</a>
       </footer>
     </div>
   );
+}
+
+function PrivacyRoute() {
+  const { lang } = useLang();
+  return <Privacy lang={lang} />;
 }
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/privacy" component={PrivacyRoute} />
       <Route component={NotFound} />
     </Switch>
   );
